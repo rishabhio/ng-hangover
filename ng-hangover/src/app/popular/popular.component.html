@@ -1,7 +1,13 @@
-<div class="wine-shelf">
-    <div *ngFor="let wine of wines">
-        <img src={{wine.image}} />
-    </div>
+<h1> Popular Hangovers </h1>
+<div class="wine-container">
+    <span *ngFor="let wine of wines">
+        <div class="column">
+        <h2> {{ wine.name }} </h2>
+    <img src={{wine.image}} />
+    <p> {{ wine.description }} </p>
+    <h2> {{ wine.price | currency:'USD':true }} </h2>
+</div>
+</span>
     <!-- <div *ngFor="let wine of wines">
         <div class="wine-container">
 

@@ -1,7 +1,13 @@
-.wine-shelf {
-    float: left;
+.wine-shelf {}
+
+.wine-container::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
-.wine-container {
-    display: inline;
+.column {
+    float: left;
+    padding: 1%;
+    width: 23%;
 }

@@ -1,27 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-
-export class Wine {
-  id: number; 
-  name: string; 
-  image: string; 
-  price: string; 
-  description: string; 
-}
-const WINES: Wine[] = [
-  { id: 101, name: 'brandy', image: 'assets/001.png', price:'34' , description: 'brandy is very trendy' },
-  { id: 102, name: 'vodka', image: 'assets/001.png', price:'45' , description: 'drink vodka and learn nodejs' }
-];
+import { CurrencyPipe } from '@angular/common';
+import { WineService } from '../wine.service'; 
+import { Wine } from '../wine.service'; 
 
 
 @Component({
   selector: 'app-popular',
   templateUrl: './popular.component.html',
-  styleUrls: ['./popular.component.css']
+  styleUrls: ['./popular.component.css'] ,
+  providers: [ WineService ]
 })
   
 export class PopularComponent implements OnInit {
-  wines = WINES; 
-  constructor() { }
+  wines : Wine[];
+  constructor(private wineService: WineService) {
+    this.wines = this.wineService.getPopularWines(); 
+   }
 
   ngOnInit() {
   }

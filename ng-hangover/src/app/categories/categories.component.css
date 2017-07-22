@@ -1,0 +1,18 @@
+.wine-container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column {
+    float: left;
+    padding: 1%;
+    width: 23%;
+    background: #f23423;
+    border: 1px;
+    border-color: #234532;
+}
+
+.column:hover {
+    background: #8f90f2;
+}
